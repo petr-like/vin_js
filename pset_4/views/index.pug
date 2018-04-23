@@ -1,0 +1,17 @@
+extends layout
+
+block content
+	h1= title
+	p Welcome to #{title}
+	div.users
+		p Список пользователей
+		table
+			each i,index in lines
+				tr
+					td= lines[index].id
+					td= lines[index].firstName
+					td= lines[index].secondName
+					td= lines[index].twitterName
+	div.registration
+		a(href="/add")
+			button Зарегистрироваться

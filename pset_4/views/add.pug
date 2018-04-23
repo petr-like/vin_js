@@ -1,0 +1,13 @@
+extends layout
+
+block content
+	form(method="post" action="/add" onsubmit="return isValidForm()")
+		p Input your name
+		input(type="text" name="firstName" placeholder="First name" required )
+		br
+		input(type="text" name="lastName" placeholder="last name" required )
+		br
+		input(type="text" id='twitter_name' name="userNameTwitter" placeholder="Your twitter nickname" required )
+		br
+		button(type="submit" value="Send") Send
+	script(src='/javascripts/mask_twitter.js')
