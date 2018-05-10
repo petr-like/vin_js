@@ -1,0 +1,45 @@
+body {
+  padding: 0;
+  width: 70%;
+  margin: 0 auto;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+.notfound{
+	text-align: center;
+	font-size: 150px;
+	color: red;
+}
+.image{
+	width: 100%;
+}
+input, button, p{
+	margin: 10px 15px;
+}
+.registration{
+	float: right;
+}
+.users{
+	float: left;
+	margin-left: 50px;
+}
+td{
+	padding: 3px;
+	border: 1px solid black;
+}
+tr:nth-child(even){
+	background-color: #a0e6fc;
+}
+button{
+	background: #a0e6fc;
+	border-style: none;
+	border-bottom: 2px solid #2d7dbe;
+}
+button:hover{
+	background: #2d7dbe;
+	padding-top: 2px;
+	cursor: pointer;
+}

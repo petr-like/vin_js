@@ -1,0 +1,16 @@
+extends layout
+
+block content
+	h1 Twtter Users
+	div.users
+		p Список пользователей
+		table
+			each i,index in users
+				tr
+					td= users[index].user_id
+					td= users[index].name
+					td= users[index].last_name
+					td= users[index].twitter_name
+	div.registration
+		a(href="/users/add")
+			button Зарегистрироваться
