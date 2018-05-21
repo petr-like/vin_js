@@ -1,6 +1,25 @@
 extends layout
 
 block content
-  p [#{checkins}]
-  button(onclick="marker()") Отобразить маркеры
-  div#map
+	h1  #{title}
+	p Welcome to #{title}
+	button.login Log In
+	button.add_user Sign Up
+	div#modal_login
+		span.close_button X
+		p Log In
+		form(method="post" action="/users/cabinet" onsubmit="return isValidForm_2()")
+			input(placeholder='Login' id="twitter_name_login" name="twitter_name_login" required)
+			input(type='password' placeholder='Passwrod' name="password_login" required)
+			input(type='Submit' value='Log In')
+	div#modal_window_register_user
+		span.close_button Х
+		p Form registration
+		form(method="post" action="/users/add" onsubmit="return isValidForm()")
+			input(placeholder="First name" name="name" required)
+			input(placeholder="Last name" name="last_name" required)
+			input(placeholder='Twitter account' id="twitter_name" name="twitter_name" required)
+			input(type='password' placeholder='Passwrod' name="password" required)
+			input(type='Submit' value='Send')
+	div#back
+	script(src='/javascripts/mask_twitter.js')

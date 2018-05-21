@@ -1,28 +1,31 @@
 var express = require('express');
 var router = express.Router();
-const config = require('../config.json');
-const mongoose = require('mongoose');
-const User = require('./../Models/userSchema.js');
-const Checkin = require('./../Models/checkinsSchema.js');
-mongoose.connect("mongodb+srv://User3:test@brainbasketcheckin-h7hkk.mongodb.net/checkin");
-const db = mongoose.connection;
-const userModel = db.model('test_users', User);
-const checkinModel = db.model('checkins', Checkin);
+// var UserController = require('./../controllers/UserController')
+var mongoose = require('mongoose');
+var config = require('../config');
+mongoose.connect(config.dbUrl);
+var db = mongoose.connection;
+var UserController = require('./../controllers/UserController');
+var User = require('./../Models/userSchema.js');
+var userModel = db.model('users', User);
+var jwt    = require('jsonwebtoken'); 
+// var checkinModel = db.model('checkins', Checkin);
+// var Checkin = require('./../Models/checkinsSchema.js');
+
 console.log(mongoose.connection.readyState);
 
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  const newCheckin = new checkinModel();
-  checkinModel.find({}, function (err, checkins) {
-    res.render('index', {checkins: checkins});
-  });
+	res.render('index');
+});
+
+router.get('/api/auth', function(req, res, next) {
+	
 });
 
 router.get('/checkins', function(req, res, next) {
-    checkinModel.find({}, function (err, checkins) {
-    res.send(checkins);
-  });
+	
 });
 
 

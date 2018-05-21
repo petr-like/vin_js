@@ -1,5 +1,5 @@
 {
-  "name": "myapp",
+  "name": "pset-5",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -10,8 +10,11 @@
     "debug": "~2.6.9",
     "express": "~4.16.0",
     "http-errors": "~1.6.2",
-    "mongoose": "^5.0.15",
+    "jsonwebtoken": "^8.2.1",
+    "mongoose": "^5.1.1",
     "morgan": "~1.9.0",
+    "nodemon": "^1.17.4",
+    "password-hash": "^1.2.2",
     "pug": "2.0.0-beta11"
   }
 }
