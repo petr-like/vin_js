@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+
 const User = new Schema({
     name: {
         type: String,
@@ -10,13 +11,17 @@ const User = new Schema({
         type: String,
         required: true
     },
-    twitter_name: {
+    username: {
         type: String,
         required: true
     },
     password: {
         type: String,
         required: true
+    },
+    token:{
+        type: String,
+        default: ''
     }
 });
 
