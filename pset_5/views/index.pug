@@ -1,0 +1,89 @@
+extends layout
+
+block content
+	#information
+		#text_information
+			span ×
+			p.title
+			p.rating
+			p.count_coments
+		.description
+		#checkin_id
+		#info_buttons
+	#cabinet_window
+		span ×
+		#cabinet_buttons
+			button.btn.btn-primary(onclick = "myCheckin()") My checkin
+			button.btn.btn-primary(onclick = "showAllCheckin()") Show all checkin
+			button.btn.btn-primary(onclick = "change_password()") Change password
+
+	h1.title_header Chekins in Vinnytsa
+	p.hello Welcome guest
+	#buttons
+
+	// Modal
+	#logInModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='logInModal', aria-hidden='true')
+		.modal-dialog.modal-dialog-centered(role='document')
+			.modal-content
+				.modal-header
+					h5#loginTitle.modal-title Log in
+					button.close(type='button', data-dismiss='modal', aria-label='Close')
+						span(aria-hidden='true') ×
+				.modal-body
+					input.form-control(name='login' placeholder="Login" autocomplete="off")
+					p.not_valid_login.err
+					input.form-control(name='login_password' placeholder="password" type="password")
+					p.not_valid_login_password.err
+					p.success_log
+				.modal-footer
+					button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+					button.btn.btn-primary(type='button' onclick="login($('input[name=login]'),$('input[name=login_password]'))") Log In
+
+	#registerModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='registerModal', aria-hidden='true')
+		.modal-dialog.modal-dialog-centered(role='document')
+			.modal-content
+				.modal-header
+					h5#registrationTitle.modal-title Registration
+					button.close(type='button', data-dismiss='modal', aria-label='Close')
+						span(aria-hidden='true') ×
+				.modal-body
+					input.form-control(name='name' placeholder="Name")
+					p.not_valid_name.err
+					input.form-control(name='last_name' placeholder="Last name")
+					p.not_valid_last_name.err
+					input.form-control(name='username' placeholder="Username")
+					p.not_valid_username.err
+					p.err
+					input.form-control(name='password' placeholder="password" type="password")
+					p.not_valid_password.err
+					input.form-control(name='password_confirmate' placeholder="password again" type="password")
+					p.not_valid_pass_conf.err
+					p.success
+				.modal-footer
+					button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+					button.btn.btn-primary(type='button' onclick="register()") Register
+
+	#checkinModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='checkinModal', aria-hidden='true')
+		.modal-dialog.modal-dialog-centered(role='document')
+			.modal-content
+				.modal-header
+					h5#checkinTitle.modal-title
+					button.close(type='button', data-dismiss='modal', aria-label='Close')
+						span(aria-hidden='true') ×
+				.modal-body
+					input.form-control(name='title' placeholder="Name")
+					p.not_valid_title.err
+					textarea.form-control(rows="5" cols="45" name='description' placeholder="Description")
+					p.not_valid_description.err
+					select(name="rating")
+						option(value="1") 1
+						option(value="2") 2
+						option(value="3") 3
+						option(value="4") 4
+						option(value="5") 5
+					input#cord.form-control(name='cord' type="hidden")
+					p.success
+				.modal-footer
+					button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+					
+	#map
