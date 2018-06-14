@@ -108,3 +108,14 @@ p.err{
 #checkin_id{
   display: none;
 }
+select[name='rating']{
+  display: none;
+}
+.rating_star{
+  display: flex;
+  align-content:  center; 
+}
+.rating_star img{
+  width: 25px;
+  height: 22px;
+}

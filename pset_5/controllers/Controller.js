@@ -27,8 +27,8 @@ module.exports = {
 	getOneId: function(id,callback){
 		userModel.findById(id, callback);
 	},
-	getOne: function(t_name,callback){
-		userModel.findOne(t_name, callback);
+	getOne: function(username,callback){
+		userModel.findOne(username, callback);
 	},
 	findByIdAndUpdate: function(id, update, callback){
 		userModel.findByIdAndUpdate(id, update, callback);
@@ -36,8 +36,8 @@ module.exports = {
 	// push: function(data, callback){
 	// 	userModel.
 	// },
-	delete: function(data){
-		
+	delete: function(data, callback){
+		userModel.remove(data, callback);
 	},
 	/////Checkin
 	createCheckin: function(data, callback){

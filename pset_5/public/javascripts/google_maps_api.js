@@ -23,6 +23,7 @@ function initMap() {
 		$('#btn-change').remove()
 		$('#btn-add').remove()
 		$('#checkinTitle').text('New checkin')
+		rating_star()
 		$('#checkinModal .modal-footer').append('<button id="btn-add" class="btn btn-primary type="button" onclick="add_checkin()"">Add checkin</button>')
 		$('#checkinModal').modal('show');
 		var a = event.latLng
@@ -175,7 +176,7 @@ function show_modal_change(){
 	$('#checkinTitle').text('Change checkin')
 	title.val($('#text_information .title')[0].innerHTML)
 	description.val($('#information .description')[0].innerHTML)
-	$('select').val($('.rating')[0].innerText)
+	rating_star($('.rating')[0].innerText)
 	$('#checkinModal .modal-footer').append('<button id="btn-change" class="btn btn-primary type="button" onclick="checkin_change()"">Change</button>')
 	$('#checkinModal').modal('show')
 }

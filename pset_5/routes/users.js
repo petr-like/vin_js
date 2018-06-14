@@ -10,9 +10,6 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-router.get('/cabinet', function(req,res,next){ // route to user's
-	res.send('cabinet');
-});
 
 router.post('/login', function(req,res,next){ // route for login
 	Controller.getOne({username: req.body.username},function(e, user){
